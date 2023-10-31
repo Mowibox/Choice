@@ -2336,5 +2336,5 @@ while True:
             pygame.display.flip()
  
     
-pygame.display.flip()   #Met à jour le tout
-clock.tick(fps)
+        pygame.display.flip()   #Met à jour le tout
+        clock.tick(fps)
