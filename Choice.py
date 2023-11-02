@@ -8,7 +8,7 @@ pygame.init()
 
 
 pygame.display.set_caption("Choice") #Titre du jeu
-pygame.display.set_icon(pygame.image.load("img/df1.png")) #Icone du jeu
+pygame.display.set_icon(pygame.image.load("img/icon{}.png".format(random.randint(0,2)))) #Icone du jeu choisie aléatoirement entre 3
 size = 800,550 # Taille de la fenêtre
 fps = 60 #Vitesse du jeu en images par secondes
 clock=pygame.time.Clock() #On défint "l'horloge" du jeu
