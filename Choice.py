@@ -447,13 +447,14 @@ boss = 0        #Gère les attaques aléatoires du boss
 avilis = 1      #Gère l'attaque spéciale du boss
 rage = 1        #Gère la "colère" du boss
 music = 0       #Gère les changements de musique
+running = True  #Gère le fonctionnement et l'arrêt du jeu
 
 #######################-  Fonctions du jeu  -##########################
 
 def move(): #fonction qui permet au joueur de se déplacer
-    global dx, dy, dx2, dy2, base, f, b, l, r, haut, bas, gauche, droite, meet, meet2, lvlm, lvl
+    global dx, dy, dx2, dy2, base, f, b, l, r, haut, bas, gauche, droite, meet, meet2, lvlm, lvl, running
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: pygame.quit()
+        if event.type == pygame.QUIT: running = False
         if event.type == KEYDOWN:
             if event.key == K_UP:               #Vers le haut
                 dy2 = dy
@@ -592,9 +593,9 @@ def winlose(): #Fonction qui vérifie en combat si il y'a une condition de victo
 
           
 def clic(): #Variable essentielle pour faire fonctionner le jeu
-    global story, meet2, meet, fight, power, fey, crit, pv, pvi, cm, dgt, cmb, pr1, pr2, lvlm, sm, pvm, cm2, xp, dx, dy, x, music, boss, avilis, scenario, bxp, haut, bas, gauche, droite, r, f, rage
+    global story, meet2, meet, fight, power, fey, crit, pv, pvi, cm, dgt, cmb, pr1, pr2, lvlm, sm, pvm, cm2, xp, dx, dy, x, music, boss, avilis, scenario, bxp, haut, bas, gauche, droite, r, f, rage, running
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: pygame.quit()
+        if event.type == pygame.QUIT: running = False
         if event.type == pygame.MOUSEBUTTONDOWN and story ==0:
                         pygame.mixer.Sound.play(click)
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:   #On clique pour commencer l'histoire
@@ -1386,7 +1387,8 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 90:  #Écran de fin
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 pygame.mixer.Sound.play(click)
-                                pygame.quit()   #Ferme le jeu quand on clique
+                                running = False #Ferme le jeu quand on clique
+                                   
                
 
 def sm(): #fonction qui permet de piocher les stats des monstres à affronter
@@ -1502,7 +1504,7 @@ def jukebox():  #fonction qui permet de changer de musique selon la zone
 screen = pygame.display.set_mode(size)  #On donne sa taille à l'écran
 pygame.key.set_repeat(50)               #Permet un mouvement "fluide" quand on bouge
 
-while True:
+while running:
         jukebox()                   #On démarre les musiques
         ori()                       #On active l'orientation du personnage pour toute la durée du jeu
         clic()                      #On permet à l'utilisateur de cliquer sur l'interface  
