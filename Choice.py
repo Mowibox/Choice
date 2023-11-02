@@ -8,6 +8,7 @@ pygame.init()
 
 
 pygame.display.set_caption("Choice") #Titre du jeu
+pygame.display.set_icon(pygame.image.load("img/df1.png")) #Icone du jeu
 size = 800,550 # Taille de la fenêtre
 fps = 60 #Vitesse du jeu en images par secondes
 clock=pygame.time.Clock() #On défint "l'horloge" du jeu
@@ -23,348 +24,380 @@ police = pygame.font.Font(None, 50) # police et taille du texte
 
 #########################-  Images du jeu  -###########################
 
-logo = pygame.image.load("img\\logo.png")
+logo = pygame.image.load("img/logo.png")
 logorect = logo.get_rect()
-go = pygame.image.load("img\\go.png")
+go = pygame.image.load("img/go.png")
 gorect = go.get_rect()
-bg1 = pygame.image.load("img\\bg1.png")
+bg1 = pygame.image.load("img/bg1.png")
 bg1rect = bg1.get_rect()
-bg2 = pygame.image.load("img\\bg2.png")
+bg2 = pygame.image.load("img/bg2.png")
 bg2rect = bg2.get_rect()
-bg3 = pygame.image.load("img\\bg3.png")
+bg3 = pygame.image.load("img/bg3.png")
 bg3rect = bg3.get_rect()
-bg4 = pygame.image.load("img\\bg4.png")
+bg4 = pygame.image.load("img/bg4.png")
 bg4rect = bg4.get_rect()
-bg5 = pygame.image.load("img\\bg5.png")
+bg5 = pygame.image.load("img/bg5.png")
 bg5rect = bg5.get_rect()
-bg6 = pygame.image.load("img\\bg6.png")
+bg6 = pygame.image.load("img/bg6.png")
 bg6rect = bg6.get_rect()
-bg7 = pygame.image.load("img\\bg7.png")
+bg7 = pygame.image.load("img/bg7.png")
 bg7rect = bg7.get_rect()
-bg8 = pygame.image.load("img\\bg8.png")
+bg8 = pygame.image.load("img/bg8.png")
 bg8rect = bg8.get_rect()
-d1 = pygame.image.load("img\\d1.png")
+d1 = pygame.image.load("img/d1.png")
 d1rect = d1.get_rect()
-d2 = pygame.image.load("img\\d2.png")
+d2 = pygame.image.load("img/d2.png")
 d2rect = d2.get_rect()
-ch = pygame.image.load("img\\ch.png")
+ch = pygame.image.load("img/ch.png")
 chrect = ch.get_rect()
-ch1 = pygame.image.load("img\\ch1.png")
+ch1 = pygame.image.load("img/ch1.png")
 ch1rect = ch1.get_rect()
-ch2 = pygame.image.load("img\\ch2.png")
+ch2 = pygame.image.load("img/ch2.png")
 ch2rect = ch2.get_rect()
-ch3 = pygame.image.load("img\\ch3.png")
+ch3 = pygame.image.load("img/ch3.png")
 ch3rect = ch3.get_rect()
-ch4 = pygame.image.load("img\\ch4.png")
+ch4 = pygame.image.load("img/ch4.png")
 ch4rect = ch4.get_rect()
-bs = pygame.image.load("img\\bs.png")
+bs = pygame.image.load("img/bs.png")
 bsrect = bs.get_rect()
-c1 = pygame.image.load("img\\c1.png")
+c1 = pygame.image.load("img/c1.png")
 c1rect = c1.get_rect()
-c2 = pygame.image.load("img\\c2.png")
+c2 = pygame.image.load("img/c2.png")
 c2rect = c2.get_rect()
-c3 = pygame.image.load("img\\c3.png")
+c3 = pygame.image.load("img/c3.png")
 c3rect = c3.get_rect()
-c4 = pygame.image.load("img\\c4.png")
+c4 = pygame.image.load("img/c4.png")
 c4rect = c4.get_rect()
-c5 = pygame.image.load("img\\c5.png")
+c5 = pygame.image.load("img/c5.png")
 c5rect = c5.get_rect()
-c6 = pygame.image.load("img\\c6.png")
+c6 = pygame.image.load("img/c6.png")
 c6rect = c6.get_rect()
-hbgd = pygame.image.load("img\\hbgd.png")
+hbgd = pygame.image.load("img/hbgd.png")
 hbgdrect = hbgd.get_rect()
-light = pygame.image.load("img\\light.png")
+light = pygame.image.load("img/light.png")
 lightrect = light.get_rect()
-light2 = pygame.image.load("img\\light2.png")
+light2 = pygame.image.load("img/light2.png")
 light2rect = light2.get_rect()
-oya = pygame.image.load("img\\oya.png")
+oya = pygame.image.load("img/oya.png")
 oyarect = oya.get_rect()
-zero = pygame.image.load("img\\0zero.png")
+zero = pygame.image.load("img/0zero.png")
 zerorect = zero.get_rect()
-un = pygame.image.load("img\\1slime.png")
+un = pygame.image.load("img/1slime.png")
 unrect = un.get_rect()
-deux = pygame.image.load("img\\2chauvesouris.png")
+deux = pygame.image.load("img/2chauvesouris.png")
 deuxrect = deux.get_rect()
-trois = pygame.image.load("img\\3espritdefeu.png")
+trois = pygame.image.load("img/3espritdefeu.png")
 troisrect = trois.get_rect()
-quatre = pygame.image.load("img\\4dragonkrok.png")
+quatre = pygame.image.load("img/4dragonkrok.png")
 quatrerect = quatre.get_rect()
-cinq = pygame.image.load("img\\5ghost.png")
+cinq = pygame.image.load("img/5ghost.png")
 cinqrect = cinq.get_rect()
-six = pygame.image.load("img\\6ovni.png")
+six = pygame.image.load("img/6ovni.png")
 sixrect = six.get_rect()
-sept = pygame.image.load("img\\7yinyon.png")
+sept = pygame.image.load("img/7yinyon.png")
 septrect = sept.get_rect()
-huit = pygame.image.load("img\\8espritforet.png")
+huit = pygame.image.load("img/8espritforet.png")
 huitrect = huit.get_rect()
 
 ############################-  Combat  -################################
 
-f1 = pygame.image.load("img\\f1.png")
+f1 = pygame.image.load("img/f1.png")
 f1rect = f1.get_rect()
-f2 = pygame.image.load("img\\f2.png")
+f2 = pygame.image.load("img/f2.png")
 f2rect = f2.get_rect()
-f3 = pygame.image.load("img\\f3.png")
+f3 = pygame.image.load("img/f3.png")
 f3rect = f3.get_rect()
-f4 = pygame.image.load("img\\f4.png")
+f4 = pygame.image.load("img/f4.png")
 f4rect = f4.get_rect()
-f5 = pygame.image.load("img\\f5.png")
+f5 = pygame.image.load("img/f5.png")
 f5rect = f5.get_rect()
-f6 = pygame.image.load("img\\f6.png")
+f6 = pygame.image.load("img/f6.png")
 f6rect = f6.get_rect()
-f7 = pygame.image.load("img\\f7.png")
+f7 = pygame.image.load("img/f7.png")
 f7rect = f7.get_rect()
-f8 = pygame.image.load("img\\f8.png")
+f8 = pygame.image.load("img/f8.png")
 f8rect = f8.get_rect()
-f9 = pygame.image.load("img\\f9.png")
+f9 = pygame.image.load("img/f9.png")
 f9rect = f9.get_rect()
-f10 = pygame.image.load("img\\f10.png")
+f10 = pygame.image.load("img/f10.png")
 f10rect = f10.get_rect()
-f11 = pygame.image.load("img\\f11.png")
+f11 = pygame.image.load("img/f11.png")
 f11rect = f11.get_rect()
-f12 = pygame.image.load("img\\f12.png")
+f12 = pygame.image.load("img/f12.png")
 f12rect = f12.get_rect()
-f13 = pygame.image.load("img\\f13.png")
+f13 = pygame.image.load("img/f13.png")
 f13rect = f13.get_rect()
-f14 = pygame.image.load("img\\f14.png")
+f14 = pygame.image.load("img/f14.png")
 f14rect = f14.get_rect()
-f15 = pygame.image.load("img\\f15.png")
+f15 = pygame.image.load("img/f15.png")
 f15rect = f15.get_rect()
-f16 = pygame.image.load("img\\f16.png")
+f16 = pygame.image.load("img/f16.png")
 f16rect = f16.get_rect()
-f17 = pygame.image.load("img\\f17.png")
+f17 = pygame.image.load("img/f17.png")
 f17rect = f17.get_rect()
-f18 = pygame.image.load("img\\f18.png")
+f18 = pygame.image.load("img/f18.png")
 f18rect = f18.get_rect()
-f19 = pygame.image.load("img\\f19.png")
+f19 = pygame.image.load("img/f19.png")
 f19rect = f19.get_rect()
-f20 = pygame.image.load("img\\f20.png")
+f20 = pygame.image.load("img/f20.png")
 f20rect = f20.get_rect()
-f21 = pygame.image.load("img\\f21.png")
+f21 = pygame.image.load("img/f21.png")
 f21rect = f21.get_rect()
-f22 = pygame.image.load("img\\f22.png")
+f22 = pygame.image.load("img/f22.png")
 f22rect = f22.get_rect()
-f23 = pygame.image.load("img\\f23.png")
+f23 = pygame.image.load("img/f23.png")
 f23rect = f23.get_rect()
-f24 = pygame.image.load("img\\f24.png")
+f24 = pygame.image.load("img/f24.png")
 f24rect = f24.get_rect()
-f25 = pygame.image.load("img\\f25.png")
+f25 = pygame.image.load("img/f25.png")
 f25rect = f25.get_rect()
-f26 = pygame.image.load("img\\f26.png")
+f26 = pygame.image.load("img/f26.png")
 f26rect = f26.get_rect()
-f27 = pygame.image.load("img\\f27.png")
+f27 = pygame.image.load("img/f27.png")
 f27rect = f27.get_rect()
-f28 = pygame.image.load("img\\f28.png")
+f28 = pygame.image.load("img/f28.png")
 f28rect = f28.get_rect()
-f29 = pygame.image.load("img\\f29.png")
+f29 = pygame.image.load("img/f29.png")
 f29rect = f29.get_rect()
-f30 = pygame.image.load("img\\f30.png")
+f30 = pygame.image.load("img/f30.png")
 f30rect = f30.get_rect()
-f31 = pygame.image.load("img\\f31.png")
+f31 = pygame.image.load("img/f31.png")
 f31rect = f31.get_rect()
-f32 = pygame.image.load("img\\f32.png")
+f32 = pygame.image.load("img/f32.png")
 f32rect = f32.get_rect()
-f33 = pygame.image.load("img\\f33.png")
+f33 = pygame.image.load("img/f33.png")
 f33rect = f33.get_rect()
-f34 = pygame.image.load("img\\f34.png")
+f34 = pygame.image.load("img/f34.png")
 f34rect = f34.get_rect()
-f35 = pygame.image.load("img\\f35.png")
+f35 = pygame.image.load("img/f35.png")
 f35rect = f35.get_rect()
-f36 = pygame.image.load("img\\f36.png")
+f36 = pygame.image.load("img/f36.png")
 f36rect = f36.get_rect()
-f37 = pygame.image.load("img\\f37.png")
+f37 = pygame.image.load("img/f37.png")
 f37rect = f37.get_rect()
-f38 = pygame.image.load("img\\f38.png")
+f38 = pygame.image.load("img/f38.png")
 f38rect = f38.get_rect()
-f39 = pygame.image.load("img\\f39.png")
+f39 = pygame.image.load("img/f39.png")
 f39rect = f39.get_rect()
-f40 = pygame.image.load("img\\f40.png")
+f40 = pygame.image.load("img/f40.png")
 f40rect = f40.get_rect()
-f41 = pygame.image.load("img\\f41.png")
+f41 = pygame.image.load("img/f41.png")
 f41rect = f41.get_rect()
-f42 = pygame.image.load("img\\f42.png")
+f42 = pygame.image.load("img/f42.png")
 f42rect = f42.get_rect()
-f43 = pygame.image.load("img\\f43.png")
+f43 = pygame.image.load("img/f43.png")
 f43rect = f43.get_rect()
-f44 = pygame.image.load("img\\f44.png")
+f44 = pygame.image.load("img/f44.png")
 f44rect = f44.get_rect()
-f45 = pygame.image.load("img\\f45.png")
+f45 = pygame.image.load("img/f45.png")
 f45rect = f45.get_rect()
-f46 = pygame.image.load("img\\f46.png")
+f46 = pygame.image.load("img/f46.png")
 f46rect = f46.get_rect()
-f47 = pygame.image.load("img\\f47.png")
+f47 = pygame.image.load("img/f47.png")
 f47rect = f47.get_rect()
-at1 = pygame.image.load("img\\at1.png")
+at1 = pygame.image.load("img/at1.png")
 at1rect = at1.get_rect()
-at2 = pygame.image.load("img\\at2.png")
+at2 = pygame.image.load("img/at2.png")
 at2rect = at2.get_rect()
-at3 = pygame.image.load("img\\at3.png")
+at3 = pygame.image.load("img/at3.png")
 at3rect = at3.get_rect()
-at4 = pygame.image.load("img\\at4.png")
+at4 = pygame.image.load("img/at4.png")
 at4rect = at4.get_rect()
-at5 = pygame.image.load("img\\at5.png")
+at5 = pygame.image.load("img/at5.png")
 at5rect = at5.get_rect()
-at6 = pygame.image.load("img\\at6.png")
+at6 = pygame.image.load("img/at6.png")
 at6rect = at6.get_rect()
-at7 = pygame.image.load("img\\at7.png")
+at7 = pygame.image.load("img/at7.png")
 at7rect = at7.get_rect()
-lvl1 = pygame.image.load("img\\lvl1.png")
+lvl1 = pygame.image.load("img/lvl1.png")
 lvl1rect = lvl1.get_rect()
-lvl2 = pygame.image.load("img\\lvl2.png")
+lvl2 = pygame.image.load("img/lvl2.png")
 lvl2rect = lvl2.get_rect()
 
 ###########################-  Dialogues -###############################
 
-dial1 = pygame.image.load("img\\dial1.png")
+dial1 = pygame.image.load("img/dial1.png")
 dial1rect = dial1.get_rect()
-dial2 = pygame.image.load("img\\dial2.png")
+dial2 = pygame.image.load("img/dial2.png")
 dial2rect = dial2.get_rect()
-dial3 = pygame.image.load("img\\dial3.png")
+dial3 = pygame.image.load("img/dial3.png")
 dial3rect = dial3.get_rect()
-dial4 = pygame.image.load("img\\dial4.png")
+dial4 = pygame.image.load("img/dial4.png")
 dial4rect = dial4.get_rect()
-dial5 = pygame.image.load("img\\dial5.png")
+dial5 = pygame.image.load("img/dial5.png")
 dial5rect = dial5.get_rect()
-dial6 = pygame.image.load("img\\dial6.png")
+dial6 = pygame.image.load("img/dial6.png")
 dial6rect = dial6.get_rect()
-dial7 = pygame.image.load("img\\dial7.png")
+dial7 = pygame.image.load("img/dial7.png")
 dial7rect = dial7.get_rect()
-dial8 = pygame.image.load("img\\dial8.png")
+dial8 = pygame.image.load("img/dial8.png")
 dial8rect = dial8.get_rect()
-dial9 = pygame.image.load("img\\dial9.png")
+dial9 = pygame.image.load("img/dial9.png")
 dial9rect = dial9.get_rect()
-dial10 = pygame.image.load("img\\dial10.png")
+dial10 = pygame.image.load("img/dial10.png")
 dial10rect = dial10.get_rect()
-dial11 = pygame.image.load("img\\dial11.png")
+dial11 = pygame.image.load("img/dial11.png")
 dial11rect = dial11.get_rect()
-dial12 = pygame.image.load("img\\dial12.png")
+dial12 = pygame.image.load("img/dial12.png")
 dial12rect = dial12.get_rect()
-dial13 = pygame.image.load("img\\dial13.png")
+dial13 = pygame.image.load("img/dial13.png")
 dial13rect = dial13.get_rect()
-dial14 = pygame.image.load("img\\dial14.png")
+dial14 = pygame.image.load("img/dial14.png")
 dial14rect = dial14.get_rect()
-dial15 = pygame.image.load("img\\dial15.png")
+dial15 = pygame.image.load("img/dial15.png")
 dial15rect = dial15.get_rect()
-dial16 = pygame.image.load("img\\dial16.png")
+dial16 = pygame.image.load("img/dial16.png")
 dial16rect = dial16.get_rect()
-dial17 = pygame.image.load("img\\dial17.png")
+dial17 = pygame.image.load("img/dial17.png")
 dial17rect = dial17.get_rect()
-dial18 = pygame.image.load("img\\dial18.png")
+dial18 = pygame.image.load("img/dial18.png")
 dial18rect = dial18.get_rect()
-dial19 = pygame.image.load("img\\dial19.png")
+dial19 = pygame.image.load("img/dial19.png")
 dial19rect = dial19.get_rect()
-dial20 = pygame.image.load("img\\dial20.png")
+dial20 = pygame.image.load("img/dial20.png")
 dial20rect = dial20.get_rect()
-dial21 = pygame.image.load("img\\dial21.png")
+dial21 = pygame.image.load("img/dial21.png")
 dial21rect = dial21.get_rect()
-dial22 = pygame.image.load("img\\dial22.png")
+dial22 = pygame.image.load("img/dial22.png")
 dial22rect = dial22.get_rect()
-dial23 = pygame.image.load("img\\dial23.png")
+dial23 = pygame.image.load("img/dial23.png")
 dial23rect = dial23.get_rect()
-dial24 = pygame.image.load("img\\dial24.png")
+dial24 = pygame.image.load("img/dial24.png")
 dial24rect = dial24.get_rect()
-dial25 = pygame.image.load("img\\dial25.png")
+dial25 = pygame.image.load("img/dial25.png")
 dial25rect = dial25.get_rect()
-dial26 = pygame.image.load("img\\dial26.png")
+dial26 = pygame.image.load("img/dial26.png")
 dial26rect = dial26.get_rect()
-dial27 = pygame.image.load("img\\dial27.png")
+dial27 = pygame.image.load("img/dial27.png")
 dial27rect = dial27.get_rect()
-dial28 = pygame.image.load("img\\dial28.png")
+dial28 = pygame.image.load("img/dial28.png")
 dial28rect = dial28.get_rect()
-dial29 = pygame.image.load("img\\dial29.png")
+dial29 = pygame.image.load("img/dial29.png")
 dial29rect = dial29.get_rect()
-dial30 = pygame.image.load("img\\dial30.png")
+dial30 = pygame.image.load("img/dial30.png")
 dial30rect = dial30.get_rect()
-dial31 = pygame.image.load("img\\dial31.png")
+dial31 = pygame.image.load("img/dial31.png")
 dial31rect = dial31.get_rect()
-dial32 = pygame.image.load("img\\dial32.png")
+dial32 = pygame.image.load("img/dial32.png")
 dial32rect = dial32.get_rect()
-dial33 = pygame.image.load("img\\dial33.png")
+dial33 = pygame.image.load("img/dial33.png")
 dial33rect = dial33.get_rect()
-dial34 = pygame.image.load("img\\dial34.png")
+dial34 = pygame.image.load("img/dial34.png")
 dial34rect = dial34.get_rect()
-dial35 = pygame.image.load("img\\dial35.png")
+dial35 = pygame.image.load("img/dial35.png")
 dial35rect = dial35.get_rect()
-dial36 = pygame.image.load("img\\dial36.png")
+dial36 = pygame.image.load("img/dial36.png")
 dial36rect = dial36.get_rect()
-dial37 = pygame.image.load("img\\dial37.png")
+dial37 = pygame.image.load("img/dial37.png")
 dial37rect = dial37.get_rect()
-dial38 = pygame.image.load("img\\dial38.png")
+dial38 = pygame.image.load("img/dial38.png")
 dial38rect = dial38.get_rect()
-dial39 = pygame.image.load("img\\dial39.png")
+dial39 = pygame.image.load("img/dial39.png")
 dial39rect = dial39.get_rect()
-dial40 = pygame.image.load("img\\dial40.png")
+dial40 = pygame.image.load("img/dial40.png")
 dial40rect = dial40.get_rect()
-dial41 = pygame.image.load("img\\dial41.png")
+dial41 = pygame.image.load("img/dial41.png")
 dial41rect = dial41.get_rect()
-dial42 = pygame.image.load("img\\dial42.png")
+dial42 = pygame.image.load("img/dial42.png")
 dial42rect = dial42.get_rect()
-dial43 = pygame.image.load("img\\dial43.png")
+dial43 = pygame.image.load("img/dial43.png")
 dial43rect = dial43.get_rect()
-dial44 = pygame.image.load("img\\dial44.png")
+dial44 = pygame.image.load("img/dial44.png")
 dial44rect = dial44.get_rect()
-dial45 = pygame.image.load("img\\dial45.png")
+dial45 = pygame.image.load("img/dial45.png")
 dial45rect = dial45.get_rect()
-dial46 = pygame.image.load("img\\dial46.png")
+dial46 = pygame.image.load("img/dial46.png")
 dial46rect = dial46.get_rect()
-dial47 = pygame.image.load("img\\dial47.png")
+dial47 = pygame.image.load("img/dial47.png")
 dial47rect = dial47.get_rect()
-dial48 = pygame.image.load("img\\dial48.png")
+dial48 = pygame.image.load("img/dial48.png")
 dial48rect = dial48.get_rect()
-dial49 = pygame.image.load("img\\dial49.png")
+dial49 = pygame.image.load("img/dial49.png")
 dial49rect = dial49.get_rect()
-dial50 = pygame.image.load("img\\dial50.png")
+dial50 = pygame.image.load("img/dial50.png")
 dial50rect = dial50.get_rect()
-dial51 = pygame.image.load("img\\dial51.png")
+dial51 = pygame.image.load("img/dial51.png")
 dial51rect = dial51.get_rect()
-dial52 = pygame.image.load("img\\dial52.png")
+dial52 = pygame.image.load("img/dial52.png")
 dial52rect = dial52.get_rect()
-dial53 = pygame.image.load("img\\dial53.png")
+dial53 = pygame.image.load("img/dial53.png")
 dial53rect = dial53.get_rect()
-dial54 = pygame.image.load("img\\dial54.png")
+dial54 = pygame.image.load("img/dial54.png")
 dial54rect = dial54.get_rect()
-dial55 = pygame.image.load("img\\dial55.png")
+dial55 = pygame.image.load("img/dial55.png")
 dial55rect = dial55.get_rect()
-dial56 = pygame.image.load("img\\dial56.png")
+dial56 = pygame.image.load("img/dial56.png")
 dial56rect = dial56.get_rect()
-dial57 = pygame.image.load("img\\dial57.png")
+dial57 = pygame.image.load("img/dial57.png")
 dial57rect = dial57.get_rect()
-dial58 = pygame.image.load("img\\dial58.png")
+dial58 = pygame.image.load("img/dial58.png")
 dial58rect = dial58.get_rect()
-dial59 = pygame.image.load("img\\dial59.png")
+dial59 = pygame.image.load("img/dial59.png")
 dial59rect = dial59.get_rect()
-dial60 = pygame.image.load("img\\dial60.png")
+dial60 = pygame.image.load("img/dial60.png")
 dial60rect = dial60.get_rect()
-dial61 = pygame.image.load("img\\dial61.png")
+dial61 = pygame.image.load("img/dial61.png")
 dial61rect = dial61.get_rect()
 
 
 ################-  Images déplacement du personnage  -##################
 
-df1 = pygame.image.load("img\\df1.png")
+df1 = pygame.image.load("img/df1.png")
 df1rect = df1.get_rect()
-df2 = pygame.image.load("img\\df2.png")                  #face
+df2 = pygame.image.load("img/df2.png")                  #face
 df2rect = df2.get_rect()
-df3 = pygame.image.load("img\\df3.png")
+df3 = pygame.image.load("img/df3.png")
 df3rect = df3.get_rect()
-db1 = pygame.image.load("img\\db1.png")
+db1 = pygame.image.load("img/db1.png")
 db1rect = db1.get_rect()
-db2 = pygame.image.load("img\\db2.png")                   #dos
+db2 = pygame.image.load("img/db2.png")                   #dos
 db2rect = db2.get_rect()
-db3 = pygame.image.load("img\\db3.png")
+db3 = pygame.image.load("img/db3.png")
 db3rect = db3.get_rect()
-dl1 = pygame.image.load("img\\dl1.png")
+dl1 = pygame.image.load("img/dl1.png")
 dl1rect = dl1.get_rect()
-dl2 = pygame.image.load("img\\dl2.png")                  #gauche
+dl2 = pygame.image.load("img/dl2.png")                  #gauche
 dl2rect = dl2.get_rect()
-dl3 = pygame.image.load("img\\dl3.png")
+dl3 = pygame.image.load("img/dl3.png")
 dl3rect = dl3.get_rect()
-dr1 = pygame.image.load("img\\dr1.png")
+dr1 = pygame.image.load("img/dr1.png")
 dr1rect = dr1.get_rect()
-dr2 = pygame.image.load("img\\dr2.png")                  #droite
+dr2 = pygame.image.load("img/dr2.png")                  #droite
 dr2rect = df2.get_rect()
-dr3 = pygame.image.load("img\\dr3.png")
+dr3 = pygame.image.load("img/dr3.png")
 dr3rect = dr3.get_rect()
+
+#########################-  SFX du jeu  -##############################
+
+avilis1 = pygame.mixer.Sound("sound/avilis1.mp3")
+avilis2 = pygame.mixer.Sound("sound/avilis2.wav")
+avilisburst1 = pygame.mixer.Sound("sound/avilisburst1.wav")
+avilisburst2 = pygame.mixer.Sound("sound/avilisburst2.wav")
+batsound = pygame.mixer.Sound("sound/batsound.mp3")
+click = pygame.mixer.Sound("sound/click.wav")
+damage = pygame.mixer.Sound("sound/damage.wav")
+damagemagic = pygame.mixer.Sound("sound/damagemagic.wav")
+dragonsound = pygame.mixer.Sound("sound/dragonsound.wav")
+feysound = pygame.mixer.Sound("sound/feysound.wav")
+firesound = pygame.mixer.Sound("sound/firesound.wav")
+firespiritsound = pygame.mixer.Sound("sound/firespiritsound.wav")
+ghostsound = pygame.mixer.Sound("sound/ghostsound.wav")
+healsound = pygame.mixer.Sound("sound/healsound.wav")
+magicsound = pygame.mixer.Sound("sound/magicsound.ogg")
+ovnisound = pygame.mixer.Sound("sound/ovnisound.wav")
+powersound = pygame.mixer.Sound("sound/powersound.wav")
+slimesound= pygame.mixer.Sound("sound/slimesound.ogg")
+sword1 = pygame.mixer.Sound("sound/sword1.wav")
+sword2 = pygame.mixer.Sound("sound/sword2.wav")
+sword3 = pygame.mixer.Sound("sound/sword3.wav")
+sword4 = pygame.mixer.Sound("sound/sword4.wav")
+sword5 = pygame.mixer.Sound("sound/sword5.wav")
+treesound = pygame.mixer.Sound("sound/treesound.ogg")
+winsound = pygame.mixer.Sound("sound/winsound.wav")
+yinyonsound = pygame.mixer.Sound("sound/yinyonsound.wav")
+swordsound = [sword1, sword2, sword3, sword4, sword5]
+monstersound = [slimesound, batsound, firespiritsound, dragonsound, ghostsound, ovnisound, yinyonsound, treesound]
+
 
 #######-  Variables nécessaires au bon fonctionnement du jeu  -########
 
@@ -518,8 +551,11 @@ def winlose(): #fonction qui vérifie en combat si il y'a une condition de victo
     global lvlm, pvm, pv, xp, story, bxp, scenario, rage, avilis, music, lvl
     if pvm <= 0:                #Si le monstre meurt
         if scenario == 2:       #Si c'est contre le boss:
+            pygame.mixer.Sound.play(avilis1)
+            pygame.mixer.Sound.play(winsound)
             story = 75          #On affiche l'écran de victoire du boss
         else:
+            pygame.mixer.Sound.play(winsound)
             story = 51          #Sinon on affiche l'écran de victoire basique
         if lvl + 2 < lvlm:
             xp = xp + (bxp*lvlm*2)    #On gagne de l'expérience en fonction de son niveau
@@ -538,6 +574,7 @@ def winlose(): #fonction qui vérifie en combat si il y'a une condition de victo
      
     if scenario == 2 and story >= 66: 
         if pvm <= 25 and rage == 1: #Lorsque le boss perd la moitié de ses PV:
+            pygame.mixer.Sound.play(avilis2)
             story = 76
             rage = 0
             music = 0               #Changement de musique
@@ -551,6 +588,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
     for event in pygame.event.get():
         if event.type == pygame.QUIT: pygame.quit()
         if event.type == pygame.MOUSEBUTTONDOWN and story ==0:
+                        pygame.mixer.Sound.play(click)
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:   #On clique pour commencer l'histoire
                                 music = 0           #Changement de la musique
                                 if restart == 0:    #Si c'est la première fois qu'on commence:
@@ -597,122 +635,156 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 1:   #L'écran de séléction des personnages est affiché
                         if 0 < event.pos[0] < 250 and 0 < event.pos[1] < 550:
                                 story = 2   #Permet de choisir l'épéiste
+                                pygame.mixer.Sound.play(click)
                      
                         if 250 < event.pos[0] < 500 and 0 < event.pos[1] < 550:
                                 story = 3   #Permet de choisir l'archer
+                                pygame.mixer.Sound.play(click)
                                 
                         if 500 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 4   #Permet de choisir la magicienne
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 2:                  #/
                         if 350 < event.pos[0] < 690 and 130 < event.pos[1] < 230:  #/
-                                story = 5                                          #/
+                                story = 5
+                                pygame.mixer.Sound.play(click)                     #/
                         if 350 < event.pos[0] < 690 and 260 < event.pos[1] < 355:  #/
-                                story = 1  #Retour                                 #/    
+                                story = 1  #Retour 
+                                pygame.mixer.Sound.play(click)                     #/    
                                                                                    #/ Peu importe le personnage choisi
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 3:                  #/ on demande à l'utilisateur s'il
                         if 350 < event.pos[0] < 690 and 130 < event.pos[1] < 230:  #/ est sûr de son choix
-                                story = 5                                          #/
+                                story = 5
+                                pygame.mixer.Sound.play(click)                     #/
                         if 350 < event.pos[0] < 690 and 260 < event.pos[1] < 355:  #/
-                                story = 1   #Retour                                #/    
+                                story = 1   #Retour
+                                pygame.mixer.Sound.play(click)                     #/    
                                                                                    #/
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 4:                  #/
                         if 350 < event.pos[0] < 690 and 130 < event.pos[1] < 230:  #/
-                                story = 5                                          #/
+                                story = 5 
+                                pygame.mixer.Sound.play(click)                     #/
                         if 350 < event.pos[0] < 690 and 260 < event.pos[1] < 355:  #/
                                 story = 1   #Retour                                #/
+                                pygame.mixer.Sound.play(click)
        
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 5: #On lui renvoie un autre personnage qui sera celui qu'il utilisera
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 6
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and 6 <= story <= 9:         #Version plus compacte pour éviter   
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:  #les répétitions
+                                pygame.mixer.Sound.play(click)
                                 story = story + 1   
                                 music = 0   #Crée une des conditions nécessaires au changement de musique
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 10:   #Sépare la zone de "clic" en deux pour pouvoir choisir entre deux propositions
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 225:
                                 story = 11
+                                pygame.mixer.Sound.play(click)
                         if 0 < event.pos[0] < 800 and 226 < event.pos[1] < 550:
                                 story = 12
+                                pygame.mixer.Sound.play(click)
        
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 11:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 111                                     #Premier choix
+                                pygame.mixer.Sound.play(click)
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 111:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 13  #Retour au scénario initial
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 12:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 121
+                                pygame.mixer.Sound.play(click)
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 121:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:   #Second choix
                                 story = 122
+                                pygame.mixer.Sound.play(click)
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 122:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 13  #Retour au scénario initial
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and 13 <= story <= 16:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:  #Version compacte du passage des dialogues 
                                 story = story + 1
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story ==18:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:  #Dialogue 
                                 story = 19
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and 20 <= story <= 24:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = story + 1        
                                 music = 0
+                                pygame.mixer.Sound.play(click)
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 25:  #Nouvelle séparation de la zone de "clic" pour un autre choix
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 225:
                                 story = 26
+                                pygame.mixer.Sound.play(click)
                         if 0 < event.pos[0] < 800 and 226 < event.pos[1] < 550:
                                 story = 27
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 26:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 261                                     #Choix 1
+                                pygame.mixer.Sound.play(click)
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 261:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 28
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 27:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:   #Choix 2
                                 story = 28
+                                pygame.mixer.Sound.play(click)
         
         elif event.type == pygame.MOUSEBUTTONDOWN and 28 <= story <= 30:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = story + 1
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 31:  #Troisième choix
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 225:
                                 story = 32
+                                pygame.mixer.Sound.play(click)
                         if 0 < event.pos[0] < 800 and 226 < event.pos[1] < 550:
                                 story = 33
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 33:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 31  #Le deuxième choix renvoie à la séléction des choix précédente
+                                pygame.mixer.Sound.play(click)
         
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 32:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
-                                story = 34  #Alors que le premier permet de continuer l'histoire                        
+                                story = 34  #Alors que le premier permet de continuer l'histoire 
+                                pygame.mixer.Sound.play(click)                      
         
         elif event.type == pygame.MOUSEBUTTONDOWN and 34 <= story <= 39:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = story + 1
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 411: #Transition entre la zone de la cabane et celle des monstres
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550: 
                                 story = 42
                                 music = 0
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 412: #Transition entre la zone des monstres et celle de la cabane
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 41
                                 music = 0
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 43:  #Quand un monstre apparaît:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
@@ -720,14 +792,18 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 sm()    #On donne ses statistiques au monstre
                                 lvlmn() #On donne son niveau au monstre
                                 pvm = s2[0]  #Les pv du monstre correspondent à la statistique de pv comprise dans le tableau des statistiques choisi
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 44:  #Dans l'écran de choix d'une action:
                         if 520 < event.pos[0] < 750 and 330 < event.pos[1] < 400:   #On peut choisir d'attaquer
                                 story = 45
+                                pygame.mixer.Sound.play(click)
                         if 520 < event.pos[0] < 750 and 430 < event.pos[1] < 510:   #On peut utiliser le kit
                                 story = 46
+                                pygame.mixer.Sound.play(click)
                         if 20 < event.pos[0] < 200 and 400 < event.pos[1] < 500:    #On peut fuir
                                 story = 42
+                                pygame.mixer.Sound.play(click)
                                 meet = 0    #Réinitialise la condition de rencontre 
                                 meet2 = 0
                                 fight = 0    #Annule le combat
@@ -739,18 +815,23 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 46:  #Dans le kit:
                         if 490 < event.pos[0] < 750 and 335 < event.pos[1] < 415: #Si santé est choisi:
                                 story = 47
+                                pygame.mixer.Sound.play(healsound)
+                                pygame.mixer.Sound.play(click)
                                 pv = pv + (1/2)*pvi #Cela nous pestaure la moitié de nos pv totaux
                                 if pv > pvi:        #Si les pv restaurés dépasse les pv totaux    
                                     pv = pvi        #Les pv seront égaux aux pv totaux
                                 
                         if 520 < event.pos[0] < 750 and 435 < event.pos[1] < 515 and power == 1: #Si puissance est choisi (et qu'il n'a pas déja été utilisé):   
                                 story = 471
+                                pygame.mixer.Sound.play(click)
+                                pygame.mixer.Sound.play(powersound)
                                 power = 0   #On met power à 0 pour ne pas qu'il soit réutilisé au prochain tour
                                 cm = cm*2   #On quadruple le coefficent multiplicateur de dégâts
                                 s1[4] = 2   #On augmente la précision
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and ((story == 47) or (story == 471)): #Après notre action (dans le kit), le monstre attaque
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)      #Un nombre aléatoire entre 1 et 100 est généré
                                 pr2 = s2[4]*100                  #La précision de base du monstre est multipliée par 100        
                                 if pr1 <= pr2:                   #Si le nombre aléatoire est inférieur à la précision du monstre:
@@ -760,8 +841,11 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         cm2 = cm2*1.5                       #Coup critique : On multiplie le coefficient multiplicateur de dégâts    
                                     if weak == 0:                               #Si la faiblesse cachée du monstre est la force:
                                         dgt = ((2.5*s2[2])/s1[3])*cm2                #Il frappera avec sa magie divisé par la défense du personnage x le coefficient multiplicateur
+                                        pygame.mixer.Sound.play(damage)
+                                        pygame.mixer.Sound.play(damagemagic)
                                     else:                                       #Si sa faiblesse cachée est la magie
                                         dgt = ((2.5*s2[1])/s1[3])*cm2                 #Il frappera avec sa force divisé par la défense du personnage x le coefficient multiplicateur
+                                        pygame.mixer.Sound.play(damage)
                                     pv = pv - dgt                    #On retire au pv de l'utilisateur le résultat du calcul 
                                     cm2 = cmb                         #On réinitialise le coefficient multiplicateur
                                     winlose()                          #On vérifie si l'utilisateur a succombé à l'attaque
@@ -771,9 +855,11 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 45: #Dans l'onglet Attaque:
                         if 535 < event.pos[0] < 765 and 330 < event.pos[1] < 395: #Si on utilise Force:
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)         
                                 pr2 = s1[4]*100
                                 if pr1 <= pr2:                   #Si le nombre aléatoire est inférieur à la précision de l'utilisateur:
+                                    
                                     story = 48
                                     if power == 1:
                                         crit = random.randint(1,16)
@@ -786,7 +872,9 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         dgt = ((2.5*s1[2])/s2[3])*cm        
                                     else:
                                         dgt = ((2.5*s1[1])/s2[3])*cm        #On calcule la force de l'utilisateur sur la défense du monstre x le coefficient multiplicateur
-                                    pvm = pvm - dgt                     #On enlève au pv du monstre les dégâts infligés    
+                                    pvm = pvm - dgt                     #On enlève au pv du monstre les dégâts infligés 
+                                    if pvm > 0:
+                                        pygame.mixer.Sound.play(swordsound[random.randint(0,4)])
                                     cm = cmb                            #On réinitialise le coefficient multiplicateur
                                     winlose()                           #On vérifie si le monstre a succombé à l'attaque
                                 else:                           #Si le nombre aléatoire est supérieur à la précision de l'utilisateur:
@@ -795,6 +883,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                         
                                             
                         if 435 < event.pos[0] < 765 and 400 < event.pos[1] < 453: #Si on utilise Magie:
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)
                                 pr2 = s1[4]*100
                                 if pr1 <= pr2:
@@ -811,6 +900,8 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     else:
                                         dgt = ((2.5*s1[2])/s2[3])*cm
                                     pvm = pvm - dgt
+                                    if pvm > 0:
+                                        pygame.mixer.Sound.play(magicsound)
                                     cm = cmb
                                     winlose()
                                 else:
@@ -818,11 +909,14 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     story = 501
                                     
                         if 535 < event.pos[0] < 765 and 460 < event.pos[1] < 517 and fey == 1: #Si on utilise Fey:
+                                pygame.mixer.Sound.play(click)
+                                pygame.mixer.Sound.play(feysound)
                                 story = 482
                                 fey = 0         #On active la compétence spéciale de Fey                                        
         
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 51:  #En cas de victoire
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = 42 #On retourne dans la zone avec les monstres
                                 meet = 0
                                 meet2 = 0
@@ -834,6 +928,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and ((story == 48) or (story == 481) or (story == 501)):
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550: #Après notre action (Force, Magie, Raté...), le monstre attaque
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)
                                 pr2 = s2[4]*100
                                 if pr1 <= pr2:
@@ -843,8 +938,11 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         cm2 = cm2*1.5
                                     if weak == 0:
                                         dgt = ((2.5*s2[2])/s1[3])*cm2
+                                        pygame.mixer.Sound.play(damage)
+                                        pygame.mixer.Sound.play(damagemagic)
                                     else:
                                         dgt = ((2.5*s2[1])/s1[3])*cm2
+                                        pygame.mixer.Sound.play(damage)
                                     pv = pv - dgt
                                     cm2 = cmb
                                     winlose()
@@ -856,9 +954,12 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 50: #Après action du monstre
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 44  #Le tour de combat est terminé et on en recommence un nouveau
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 482: #Quand Fey est activé:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(firesound)
+                                pygame.mixer.Sound.play(click)
                                 dgt = ((9.5*s1[1])/s2[3])   #On change le "2.5" en "9.5" pour augmenter drastiquement les dégâts
                                 pvm = pvm - dgt
                                 winlose()
@@ -866,6 +967,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 49: #Après l'attaque de Fey, le monstre attaque
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)
                                 pr2 = s2[4]*100
                                 if pr1 <= pr2:
@@ -875,8 +977,11 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         cm = cm*1.5
                                     if weak == 0:
                                         dgt = ((2.5*s2[2])/s1[3])*cm2
+                                        pygame.mixer.Sound.play(damage)
+                                        pygame.mixer.Sound.play(damagemagic)
                                     else:
                                         dgt = ((2.5*s2[1])/s1[3])*cm2
+                                        pygame.mixer.Sound.play(damage)
                                     pv = pv - dgt
                                     cm2 = cmb
                                     winlose()
@@ -886,58 +991,71 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     
         elif event.type == pygame.MOUSEBUTTONDOWN and (story == -2): #Si on n'a plus de pv, l'écran nous l'indique
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = -1
                                 music = 0
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and  (story == -3): #Si on n'a plus de pv (boss), l'écran nous l'indique
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = -1
                                 music = 0         
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == -1:  #Game over
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = 0 
                                 music = 0
                                 
         if event.type == pygame.MOUSEBUTTONDOWN and ((story == 45) or (story == 46) or (story == 502)): #Si on clique "Retour" ou "Suite" (quand le monstre a raté son attaque)
                         if 20 < event.pos[0] < 200 and 400 < event.pos[1] < 500:
+                                pygame.mixer.Sound.play(click)
                                 story = 44  #Le tour est terminé et on en recommence un nouveau                     
        
         elif event.type == pygame.MOUSEBUTTONDOWN and 401 <= story <= 404:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550: #Dialogue : Conseils donnés par le Vieillard
                                 story = story + 1
+                                pygame.mixer.Sound.play(click)
         
         elif event.type == pygame.MOUSEBUTTONDOWN and 401 <= story <= 405:  #Fin de dialogue 
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
-                                story = 40  #Retour dans la cabane                       
+                                story = 40  #Retour dans la cabane 
+                                pygame.mixer.Sound.play(click)                      
         
         elif event.type == pygame.MOUSEBUTTONDOWN and 52 <= story <= 57: #Dialogue : Le Vieillard parle du boss
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = story + 1        
                                 music = 0
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 58:  #On sépare la zone de" clic" en deux
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 225:
                                 story = 581                                         #Choix 1
+                                pygame.mixer.Sound.play(click)
                         if 0 < event.pos[0] < 800 and 226 < event.pos[1] < 550:
                                 story = 582                                         #Choix 2
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and ((story == 581) or (story == 582)):   #Suite du dialogue
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:       
                                 story = 59
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 59:  #Suite du dialogue
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = story + 1
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 60:  #Fin du dialogue
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
-                                story = 40                   
+                                story = 40   
+                                pygame.mixer.Sound.play(click)                
          
                                     #-- Boss --
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 61: #Dernier choix avant d'entrer dans la salle du boss
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 220:   #Si on accepte d'entrer:
+                                pygame.mixer.Sound.play(click)
                                 story = 62  #On accède au boss
                                 music = 0
                                 dx = 60     #On change les coordonnées du personnage
@@ -948,11 +1066,17 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 bas = 0
                                 r = 1
                         if 0 < event.pos[0] < 800 and 221 < event.pos[1] < 390: #Si on refuse d'entrer:
+                                pygame.mixer.Sound.play(click)
                                 story = 41
                                 dx = 690
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and 62 <= story <= 65: #Dialogue avec le boss et début du combat
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
+                                if story == 62:
+                                       pygame.mixer.Sound.play(avilis1)
+                                elif story == 64:
+                                       pygame.mixer.Sound.play(avilis2)
                                 story = story + 1  
                                 music = 0
                                 pvm = s2[0]     #On change les points de vie du boss pour ceux compris dans ses statistiques
@@ -962,17 +1086,23 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 66:  #Choix d'action
                         if 520 < event.pos[0] < 750 and 330 < event.pos[1] < 400:
                                 story = 67
+                                pygame.mixer.Sound.play(click)
                         if 520 < event.pos[0] < 750 and 430 < event.pos[1] < 510:
                                 story = 68
-                                
+                                pygame.mixer.Sound.play(click)
+
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 68:  #Santé
                         if 490 < event.pos[0] < 750 and 335 < event.pos[1] < 415:
+                                pygame.mixer.Sound.play(click)
+                                pygame.mixer.Sound.play(healsound)
                                 story = 69
                                 pv = pv + (1/2)*pvi
                                 if pv > pvi:
                                     pv = pvi
                                 
                         if 520 < event.pos[0] < 750 and 435 < event.pos[1] < 515 and power == 1: #Puissance
+                                pygame.mixer.Sound.play(click)
+                                pygame.mixer.Sound.play(powersound)
                                 story = 691
                                 power = 0
                                 cm = cm*4
@@ -980,6 +1110,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and ((story == 69) or (story == 691)): #Le boss attaque 
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)
                                 pr2 = s2[4]*100
                                 if pr1 <= pr2:
@@ -987,6 +1118,8 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         boss = random.randint(1,15)        #On génère un nombre aléatoire entre 1 et 15 (1/15 chances de faire le coup spécial)
                                         if boss == 15 :                    #Si le nombre aléatoire est égal à 15:
                                             story = 73                          #Il utilise son coup spécial
+                                            if story == 73:
+                                                pygame.mixer.Sound.play(avilis2)
                                             avilis = 0                          #On désactive son coup spécial pour les tours suivants   
                                         else:
                                             story = 72
@@ -994,6 +1127,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                             if crit == 1:
                                                 cm2 = cm2*1.5
                                             dgt = ((2.5*s2[1])/s1[3])*cm2
+                                            pygame.mixer.Sound.play(damage)
                                             pv = pv - dgt
                                             cm2 = cmb
                                             winlose()
@@ -1003,6 +1137,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         if crit == 1:
                                             cm2 = cm2*1.5
                                         dgt = ((2.5*s2[1])/s1[3])*cm2
+                                        pygame.mixer.Sound.play(damage)
                                         pv = pv - dgt
                                         cm2 = cmb
                                         winlose()   #winlose() vérifie aussi si les pv du boss sont en dessous de la moitié (si c'est le cas voir l.509)
@@ -1012,6 +1147,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 67:  #Attaque
                         if 535 < event.pos[0] < 765 and 330 < event.pos[1] < 395:   #Force
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)
                                 pr2 = s1[4]*100
                                 if pr1 <= pr2:
@@ -1027,6 +1163,8 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     else:
                                         dgt = ((2.5*s1[1])/s2[3])*cm
                                     pvm = pvm - dgt
+                                    if pvm > 0:
+                                        pygame.mixer.Sound.play(swordsound[random.randint(0,4)])
                                     cm = cmb
                                     winlose()
                                 else:
@@ -1035,6 +1173,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                         
                                             
                         if 435 < event.pos[0] < 765 and 400 < event.pos[1] < 453:   #Magie
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)
                                 pr2 = s1[4]*100
                                 if pr1 <= pr2:
@@ -1049,6 +1188,8 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         cm = cm*1.5
                                     dgt = ((2.5*s1[2])/s2[3])*cm
                                     pvm = pvm - dgt
+                                    if pvm > 0:
+                                        pygame.mixer.Sound.play(magicsound)
                                     cm = cmb
                                     winlose()
                                 else:
@@ -1056,15 +1197,19 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     story = 721
                         
                         if 535 < event.pos[0] < 765 and 460 < event.pos[1] < 517 and fey == 1: #Fey
+                                pygame.mixer.Sound.play(click)
+                                pygame.mixer.Sound.play(feysound)
                                 story = 702 #Activation du coup spécial
                                 fey = 0
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 75: #Si on gagne:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = 771 #On affiche l'écran de victoire contre le boss
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 771: #Écran de transition entre le boss et la fin
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = 77   
                                 music = 0
                                 
@@ -1084,6 +1229,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                             if crit == 1:
                                                 cm2 = cm2*1.5
                                             dgt = ((2.5*s2[1])/s1[3])*cm2
+                                            pygame.mixer.Sound.play(damage)
                                             pv = pv - dgt
                                             cm2 = cmb
                                             winlose()
@@ -1093,6 +1239,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         if crit == 1:
                                             cm2 = cm2*1.5
                                         dgt = ((2.5*s2[1])/s1[3])*cm2
+                                        pygame.mixer.Sound.play(damage)
                                         pv = pv - dgt
                                         cm2 = cmb
                                         winlose()
@@ -1103,10 +1250,13 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 72:  #Après l'attaque du boss
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = 66  #Le tour se termine et un autre commence                 
                                          
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 702: #Attaque de Fey
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
+                                pygame.mixer.Sound.play(firesound)
                                 dgt = ((12*s1[1])/s2[3])
                                 s1[1] = s1[1]*1.5   #On augmente la Force du personnage
                                 s1[2] = s1[2]*1.5   #On augmente le Magie du personnage
@@ -1116,10 +1266,14 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 73:  #Coup spécial du boss
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
+                                pygame.mixer.Sound.play(avilisburst1)
+                                pygame.mixer.Sound.play(avilisburst2)
                                 story = 731 #Activation du coup spécial
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 731: #Coup spécial du boss
-                        if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:                       
+                        if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:     
+                                pygame.mixer.Sound.play(click)                  
                                 dgt = ((4*s2[1])/s1[3]) #On change le "2.5" en "20" pour augmenter les dégâts subis
                                 s1[3] = s1[3]*0.67       #On baisse la défense du personnage
                                 pv = pv - dgt
@@ -1128,10 +1282,12 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 76:  #Le boss s'énerve
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = 66  #Nouveau tour
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 71: #Après l'action (Fey), le boss attaque
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 pr1 = random.randint(1,100)
                                 pr2 = s2[4]*100
                                 if pr1 <= pr2:
@@ -1164,44 +1320,55 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     
         if event.type == pygame.MOUSEBUTTONDOWN and ((story == 67) or (story == 68) or (story == 722)): #Si on appuie sur "Retour" ou "Suite" (Quand une attaque est ratée):
                         if 20 < event.pos[0] < 200 and 400 < event.pos[1] < 500:
+                                pygame.mixer.Sound.play(click)
                                 story = 66     #Nouveau tour 
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and 77 <= story <= 80:    #Dialogue de fin dans la cabane
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 story = story + 1
                                 music = 0
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 81:  #Dernier choix du jeu
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 225:
                                 story = 811 #Fin 1
+                                pygame.mixer.Sound.play(click)
                         if 0 < event.pos[0] < 800 and 226 < event.pos[1] < 550:
                                 story = 82  #Fin 2
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and 811 <= story <= 817:     
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:   #Fin 1
                                 story = story + 1
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 818:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:   #Mot final
                                 story = 89
                                 music = 0       
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and 82 <= story <= 87:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:   #Fin 2 
                                 story = story + 1    
+                                pygame.mixer.Sound.play(click)
         
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 88:
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:   #Mot final
                                 story = 89
                                 music = 0
+                                pygame.mixer.Sound.play(click)
         
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 89:  #Écran de fin
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 90
+                                pygame.mixer.Sound.play(click)
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 90:  #Écran de fin
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
+                                pygame.mixer.Sound.play(click)
                                 pygame.quit()   #Ferme le jeu quand on clique
+               
 
 def sm(): #fonction qui permet de piocher les stats des monstres à affronter
     global x1,s2, weak, bxp
@@ -1254,10 +1421,12 @@ def combat():   #Fonction qui permet d'engager un combat
         if story == 42: #Lorsque l'on est dans la bonne zone, le combat s'enclenche
             story = 43
             x1 = random.randint(0,7) #Nous donne 1/8 d'affronter un certain monstre
+            pygame.mixer.Sound.play(monstersound[x1])
             
 def exp():  #Définit la montée de niveau
     global lvl, xp, s1, pvi
     if xp > lvl**3:         #Quand l'expérience a dépassée le seuil limite du niveau actuel
+        xp = 50
         lvl = lvl + 1       #Le niveau augmente
         for i in range (1,4):
             s1[i] = s1[i] + 1       #On augmente les stats (sauf la chance) de 1
@@ -1267,47 +1436,47 @@ def exp():  #Définit la montée de niveau
 def jukebox():  #fonction qui permet de changer de musique selon la zone
     global story, music, scenario
     if story == 0 and music == 0:   #Si l'utilisateur remplit les conditions requises :
-        pygame.mixer.music.load(r"music\ecrantitre.mp3")   #On charge une musique
-        pygame.mixer.music.play()                   #On joue la musique
+        pygame.mixer.music.load(r"music/ecrantitre.mp3")   #On charge une musique
+        pygame.mixer.music.play(-1)                   #On joue la musique
         music = 1   #On annule une des conditions requises pour que la musique ne se recommence pas en boucle
     elif story == 1 and music == 0:
-        pygame.mixer.music.load(r"music\select.mp3")
-        pygame.mixer.music.play(loops=2)
+        pygame.mixer.music.load(r"music/select.mp3")
+        pygame.mixer.music.play(-1)
         music = 1
     elif (story == 7 or story == 41) and music == 0:
-        pygame.mixer.music.load(r"music\foret.mp3")
-        pygame.mixer.music.play(loops=2) #On boucle la musique lorsqu'elle est suceptible d'être trop courte
+        pygame.mixer.music.load(r"music/foret.mp3")
+        pygame.mixer.music.play(-1) #On boucle la musique lorsqu'elle est suceptible d'être trop courte
         music = 1
     elif story == 42 and music == 0:
-        pygame.mixer.music.load(r"music\foret2.mp3")
-        pygame.mixer.music.play(loops=3)
+        pygame.mixer.music.load(r"music/foret2.mp3")
+        pygame.mixer.music.play(-1)
         music = 1
     elif story == 53 and music == 0:
-        pygame.mixer.music.load(r"music\trouble.mp3")
-        pygame.mixer.music.play()
+        pygame.mixer.music.load(r"music/trouble.mp3")
+        pygame.mixer.music.play(-1)
         music = 1
     elif story == 62 and music == 0:
-        pygame.mixer.music.load(r"music\avant-avilis.mp3")
-        pygame.mixer.music.play()
+        pygame.mixer.music.load(r"music/avant-avilis.mp3")
+        pygame.mixer.music.play(-1)
         music = 1
     elif story == 65 and music == 0:
-        pygame.mixer.music.load(r"music\avilis.mp3")
-        pygame.mixer.music.play(loops=2)
+        pygame.mixer.music.load(r"music/avilis.mp3")
+        pygame.mixer.music.play(-1)
         music = 1
     elif story == -1 and music == 0:
-        pygame.mixer.music.load(r"music\gameover.mp3")
-        pygame.mixer.music.play()
+        pygame.mixer.music.load(r"music/gameover.mp3")
+        pygame.mixer.music.play(-1)
         music = 1
     elif story == 76 and music == 0:
-        pygame.mixer.music.load(r"music\avilis50.mp3")
-        pygame.mixer.music.play()
+        pygame.mixer.music.load(r"music/avilis50.mp3")
+        pygame.mixer.music.play(-1)
         music = 1
     elif story == 78 and music == 0:
-        pygame.mixer.music.load(r"music\ending.mp3")
-        pygame.mixer.music.play()
+        pygame.mixer.music.load(r"music/ending.mp3")
+        pygame.mixer.music.play(-1)
         music = 1
     elif story == 89 and music == 0:
-        pygame.mixer.music.load(r"music\thanks.mp3")
+        pygame.mixer.music.load(r"music/thanks.mp3")
         pygame.mixer.music.play()
         music = 1
 ####################-  Initialisation du jeu  -#########################
@@ -2335,6 +2504,11 @@ while True:
             screen.blit(logo, [150, 100])
             pygame.display.flip()
  
-    
+        
         pygame.display.flip()   #Met à jour le tout
         clock.tick(fps)
+
+        #Debug
+        #print(clock.get_fps())
+        #print("Héros :"+str(s1)+" PV : "+str(pv))
+        #print("Monstre :"+str(s2)+" PV : "+str(pvm))

@@ -1,6 +1,15 @@
 # Choice
-High school-developed Python RPG game demo (French)
+## High school-developed Python RPG game demo (French)
+![Choice](/img/bg1.png)
 
-Downloads links for executable version :
-- Windows : https://mega.nz/file/YrJxiDCR#DI_CZ2YrYTXuBIjV35gn9nvHE-Gmm14yF_eQY24DfrQ
-- Linux : https://mega.nz/file/BnAUSKob#0r6ez6IqDK9hlEt6oH3UKBdysjXbpAuXH8swCyPv1FI
+### Requirements:
+ You will need to have Python installed on your machine and you may have to install the Pygame module, which can be done using the following command: 
+
+```
+pip install pygame
+```
+To start the game, make sure to run the .py file in the correct folder.
+
+### Downloads links for executable version :
+- Windows : _Coming soon_
+- Linux : _Coming soon_
