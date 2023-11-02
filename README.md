@@ -11,5 +11,5 @@ pip install pygame
 To start the game, make sure to run the .py file in the correct location.
 
 ### Downloads links for executable version :
-- Windows : _Coming soon_
+- Windows : [Download for Windows](https://mega.nz/file/ezBGCbbK#S6Q3OqO_HKM05iSMVkKWRUFErh4yxxat3hGB5qS_UsE)
 - Linux : _Coming soon_
