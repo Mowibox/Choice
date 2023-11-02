@@ -415,7 +415,7 @@ pr2 = 1        #Précision des attaques
 crit = 0       #Gère les coups critiques
 lvl = 5        #Niveau de l'utilisateur 
 lvlm = 4       #Niveau du monstre
-xp = 50        #Expérience de l'utilisateur 
+xp = 25        #Expérience de l'utilisateur 
 bxp = 50       #Gère l'expérience que rapporte les monstres une fois vaincus 
 weak = 0       #Gère la faiblesse cachée des monstres
 cm = 1         #Coefficient multiplicateur pour le calcul des dégâts (utilisateur)
@@ -429,7 +429,7 @@ dy = 250       #Déplacement vertical du personnage
 dy2 = 250      #Bloquage vertical du personnage
 vit = 15       #Vitesse permettant le déplacement du personnage
 s1 = [20, 5, 5, 5, 0.95]   #Statistiques de l'utilisateur  
-s2 = [50]                  #Staistiiques du mosntre 
+s2 = [20,5, 5, 5, 0.95]                  #Statistiques du mosntre 
 pvi = 20 + (5*lvl-25)      #Points de vie initiaux du personnage 
 pv = 20                    #Points de vie du de l'utilisateur
 pvm = 20                   #Points de vie du monstre 
@@ -451,7 +451,7 @@ music = 0       #Gère les changements de musique
 #######################-  Fonctions du jeu  -##########################
 
 def move(): #fonction qui permet au joueur de se déplacer
-    global dx, dy, dx2, dy2, base, f, b, l, r, haut, bas, gauche, droite, meet, meet2
+    global dx, dy, dx2, dy2, base, f, b, l, r, haut, bas, gauche, droite, meet, meet2, lvlm, lvl
     for event in pygame.event.get():
         if event.type == pygame.QUIT: pygame.quit()
         if event.type == KEYDOWN:
@@ -466,6 +466,8 @@ def move(): #fonction qui permet au joueur de se déplacer
                 meet2 = random.randint(1,10)    
                 if meet2 == 10:                 #Nous donne 1 chance sur 10 de rencontrer un    
                     meet = 1                    #monstre lorsque l'on marche dans la zone prévue
+                    lvlm = random.randint(lvl-2,lvl+5) #Donne un niveau aléatoire ua monstre en fonction du niveau du héros
+                    
                 
             if event.key == K_DOWN:             #Vers le bas
                 dy2 = dy  
@@ -478,6 +480,8 @@ def move(): #fonction qui permet au joueur de se déplacer
                 meet2 = random.randint(1,10)
                 if meet2 == 10:
                     meet = 1
+                    lvlm = random.randint(lvl-2,lvl+5) 
+                    
                 
             if event.key == K_LEFT:             #Vers la gauche
                 dx2 = dx   
@@ -490,6 +494,8 @@ def move(): #fonction qui permet au joueur de se déplacer
                 meet2 = random.randint(1,10)
                 if meet2 == 10:
                     meet = 1
+                    lvlm = random.randint(lvl-2,lvl+5) 
+                    
                 
             if event.key == K_RIGHT:            #Vers la droite
                 dx2 = dx   
@@ -502,6 +508,8 @@ def move(): #fonction qui permet au joueur de se déplacer
                 meet2 = random.randint(1,10)
                 if meet2 == 10:
                     meet = 1
+                    lvlm = random.randint(lvl-2,lvl+5) 
+                    
                 
 def ori():  #Fonction qui permet de gérer l'orientation du personnage lorsqu'il bouge
     global haut, bas, gauche, droite
@@ -547,7 +555,7 @@ def anir(): #(Vers la droite)
         f = 0
         x = r + 12
         
-def winlose(): #fonction qui vérifie en combat si il y'a une condition de victoire ou défaite
+def winlose(): #Fonction qui vérifie en combat si il y'a une condition de victoire ou défaite
     global lvlm, pvm, pv, xp, story, bxp, scenario, rage, avilis, music, lvl
     if pvm <= 0:                #Si le monstre meurt
         if scenario == 2:       #Si c'est contre le boss:
@@ -647,23 +655,23 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 2:                  #/
                         if 350 < event.pos[0] < 690 and 130 < event.pos[1] < 230:  #/
-                                story = 5
+                                story = 5                                          #/
                                 pygame.mixer.Sound.play(click)                     #/
                         if 350 < event.pos[0] < 690 and 260 < event.pos[1] < 355:  #/
-                                story = 1  #Retour 
+                                story = 1  #Retour                                 #/
                                 pygame.mixer.Sound.play(click)                     #/    
                                                                                    #/ Peu importe le personnage choisi
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 3:                  #/ on demande à l'utilisateur s'il
                         if 350 < event.pos[0] < 690 and 130 < event.pos[1] < 230:  #/ est sûr de son choix
-                                story = 5
+                                story = 5                                          #/
                                 pygame.mixer.Sound.play(click)                     #/
                         if 350 < event.pos[0] < 690 and 260 < event.pos[1] < 355:  #/
-                                story = 1   #Retour
+                                story = 1   #Retour                                #/
                                 pygame.mixer.Sound.play(click)                     #/    
                                                                                    #/
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 4:                  #/
                         if 350 < event.pos[0] < 690 and 130 < event.pos[1] < 230:  #/
-                                story = 5 
+                                story = 5                                          #/
                                 pygame.mixer.Sound.play(click)                     #/
                         if 350 < event.pos[0] < 690 and 260 < event.pos[1] < 355:  #/
                                 story = 1   #Retour                                #/
@@ -790,9 +798,10 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                         if 0 < event.pos[0] < 800 and 0 < event.pos[1] < 550:
                                 story = 44
                                 sm()    #On donne ses statistiques au monstre
-                                lvlmn() #On donne son niveau au monstre
-                                pvm = s2[0]  #Les pv du monstre correspondent à la statistique de pv comprise dans le tableau des statistiques choisi
+                                lvlmn() #On réajuste ses statistiques en fonction de son niveau
+                                #pvm = s2[0]  #Les pv du monstre correspondent à la statistique de pv comprise dans le tableau des statistiques choisi
                                 pygame.mixer.Sound.play(click)
+                                cm = 1       #Réinitialise le coefficient multiplicateur
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 44:  #Dans l'écran de choix d'une action:
                         if 520 < event.pos[0] < 750 and 330 < event.pos[1] < 400:   #On peut choisir d'attaquer
@@ -804,11 +813,10 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                         if 20 < event.pos[0] < 200 and 400 < event.pos[1] < 500:    #On peut fuir
                                 story = 42
                                 pygame.mixer.Sound.play(click)
-                                meet = 0    #Réinitialise la condition de rencontre 
+                                meet = 0     #Réinitialise la condition de rencontre 
                                 meet2 = 0
                                 fight = 0    #Annule le combat
                                 power = 1    #Restaure la puissance (si utilisée)
-                                cm = 1       #Réinitialise le coefficient multiplicateur
                                 fey = 1      #Restaure la capacité spéciale (si utilisée)
                                 s1[4] = 0.95 #Restaure la précision de base
                                 
@@ -826,7 +834,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 pygame.mixer.Sound.play(click)
                                 pygame.mixer.Sound.play(powersound)
                                 power = 0   #On met power à 0 pour ne pas qu'il soit réutilisé au prochain tour
-                                cm = cm*2   #On quadruple le coefficent multiplicateur de dégâts
+                                cm = cm*2   #On double le coefficent multiplicateur de dégâts
                                 s1[4] = 2   #On augmente la précision
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and ((story == 47) or (story == 471)): #Après notre action (dans le kit), le monstre attaque
@@ -875,7 +883,10 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     pvm = pvm - dgt                     #On enlève au pv du monstre les dégâts infligés 
                                     if pvm > 0:
                                         pygame.mixer.Sound.play(swordsound[random.randint(0,4)])
-                                    cm = cmb                            #On réinitialise le coefficient multiplicateur
+                                    if power == 1:
+                                        cm = cmb                         #On réinitialise le coefficient multiplicateur
+                                    else:
+                                        cm = 2
                                     winlose()                           #On vérifie si le monstre a succombé à l'attaque
                                 else:                           #Si le nombre aléatoire est supérieur à la précision de l'utilisateur:
                                     winlose()
@@ -962,7 +973,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 pygame.mixer.Sound.play(click)
                                 dgt = ((9.5*s1[1])/s2[3])   #On change le "2.5" en "9.5" pour augmenter drastiquement les dégâts
                                 pvm = pvm - dgt
-                                winlose()
+                                #winlose()
                                 story = 49    
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 49: #Après l'attaque de Fey, le monstre attaque
@@ -1105,7 +1116,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 pygame.mixer.Sound.play(powersound)
                                 story = 691
                                 power = 0
-                                cm = cm*4
+                                cm = cm*2
                                 s1[4] = 2
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and ((story == 69) or (story == 691)): #Le boss attaque 
@@ -1165,7 +1176,10 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     pvm = pvm - dgt
                                     if pvm > 0:
                                         pygame.mixer.Sound.play(swordsound[random.randint(0,4)])
-                                    cm = cmb
+                                    if power == 1:
+                                        cm = cmb                         
+                                    else:
+                                        cm = 2
                                     winlose()
                                 else:
                                     winlose()
@@ -1190,7 +1204,10 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                     pvm = pvm - dgt
                                     if pvm > 0:
                                         pygame.mixer.Sound.play(magicsound)
-                                    cm = cmb
+                                    if power == 1:
+                                        cm = cmb                         
+                                    else:
+                                        cm = 2
                                     winlose()
                                 else:
                                     winlose()
@@ -1222,6 +1239,8 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                         boss = random.randint(1,15)
                                         if boss == 15 :
                                             story = 73
+                                            if story == 73:
+                                                pygame.mixer.Sound.play(avilis2)
                                             avilis = 0
                                         else:
                                             story = 72
@@ -1261,7 +1280,7 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
                                 s1[1] = s1[1]*1.5   #On augmente la Force du personnage
                                 s1[2] = s1[2]*1.5   #On augmente le Magie du personnage
                                 pvm = pvm - dgt
-                                winlose()
+                                #winlose()
                                 story = 71  
                                 
         elif event.type == pygame.MOUSEBUTTONDOWN and story == 73:  #Coup spécial du boss
@@ -1373,46 +1392,46 @@ def clic(): #Variable essentielle pour faire fonctionner le jeu
 def sm(): #fonction qui permet de piocher les stats des monstres à affronter
     global x1,s2, weak, bxp
     if x1 == 0: #Slime
-        s2 = [15, 5, 5, 4, 0.7] #[pv, force, magie, défense, chance]
+        s2 = [15, 3, 3, 3, 0.7] #[pv, force, magie, défense, chance]
         weak = 0                #définit une faiblesse cachée à la force ou à la magie
         bxp = 5                 #définit l'expérience gagnée en le vaincant
     if x1 == 1: #Chauve-souris
-        s2 = [10, 5, 2, 4, 0.8]
+        s2 = [15, 4, 3, 4, 0.8]
         weak = 1                #0 = faible à la force/ 1 = faible à la magie    
         bxp = 6
     if x1 == 2: #Esprit de feu
-        s2 = [15, 2, 7, 4, 0.9]
+        s2 = [20, 3, 6, 3, 0.9]
         weak = 0
         bxp = 8
     if x1 == 3: #Dragon krok
-        s2 = [20, 10, 5, 4, 0.9]
+        s2 = [20, 12, 5, 3, 0.9]
         weak = 1
         bxp = 15
     if x1 == 4: #Fantôme
-        s2 = [20, 7, 4, 4, 0.9]
+        s2 = [20, 7, 4, 3, 0.9]
         weak = 1
         bxp = 7
     if x1 == 5: #O.V.N.I.
-        s2 = [30, 5, 5, 6, 1]
+        s2 = [30, 4, 4, 6, 1]
         weak = 0
         bxp = 20
     if x1 == 6: #Yin-Yon
-        s2 = [20, 2, 6, 5, 2]
+        s2 = [25, 3, 9, 4, 2]
         weak = 0
         bxp = 9
     if x1 == 7: #Esprit de la forêt
-        s2 = [25, 12, 6, 4, 0.75]
+        s2 = [25, 16, 6, 3, 0.75]
         weak = 1
-        bxp = 11
+        bxp = 12
     return s2
 
 
-def lvlmn():    #fonction qui définit le niveau et les statistiques du monstre
-    global lvl, s2, lvlm
+def lvlmn():    #Fonction qui définit le niveau et les statistiques du monstre
+    global lvl, s2, lvlm, pvm
     for i in range (1,4):
         s2[i] = s2[i] + (lvlm-5) #On augmente les stats du monstre en fonction du niveau du joueur
-    s2[0] = s2[0] + (s1[0]-20)  #Calcul spécial pour les pv
-    lvlm = random.randint(lvl-2,lvl+5) 
+    pvm = s2[0] + 5*lvlm-25    #Calcul spécial pour les pv
+    return s2
     
     
 def combat():   #Fonction qui permet d'engager un combat
@@ -1425,8 +1444,8 @@ def combat():   #Fonction qui permet d'engager un combat
             
 def exp():  #Définit la montée de niveau
     global lvl, xp, s1, pvi
-    if xp > lvl**3:         #Quand l'expérience a dépassée le seuil limite du niveau actuel
-        xp = 50
+    if xp > ceil(lvl**2.5):         #Quand l'expérience a dépassée le seuil limite du niveau actuel
+        xp = 25
         lvl = lvl + 1       #Le niveau augmente
         for i in range (1,4):
             s1[i] = s1[i] + 1       #On augmente les stats (sauf la chance) de 1
@@ -2510,5 +2529,8 @@ while True:
 
         #Debug
         #print(clock.get_fps())
-        #print("Héros :"+str(s1)+" PV : "+str(pv))
-        #print("Monstre :"+str(s2)+" PV : "+str(pvm))
+        #print(cm)
+        #print("Crit : "+str(crit))
+        #print("Héros lvl "+str(lvl)+" :"+str(s1)+" PV : "+str(pv))
+        #print("Monstre lvl "+str(lvlm)+" :"+str(s2)+" PV : "+str(pvm)+"\n")
+        #print(str(xp)+"/"+str(ceil(lvl**2.5)))
