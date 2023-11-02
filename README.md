@@ -1,6 +1,6 @@
 # Choice
 ## High school-developed Python RPG game demo (French)
-![Choice](/img/bg1.png)
+![Choice](/img/screentitle.png)
 
 ### Requirements:
  You will need to have Python installed on your machine and you may have to install the Pygame module, which can be done using the following command: 
