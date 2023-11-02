@@ -8,7 +8,7 @@
 ```
 pip install pygame
 ```
-To start the game, make sure to run the .py file in the correct folder.
+To start the game, make sure to run the .py file in the correct location.
 
 ### Downloads links for executable version :
 - Windows : _Coming soon_
