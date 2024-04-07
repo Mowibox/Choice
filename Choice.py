@@ -1,4 +1,13 @@
 # coding: utf-8
+"""
+    @file        Choice.py
+    @author      Mowibox (Ousmane THIONGANE)
+    @brief       High school-developed Python RPG game demo 
+    @version     2.0
+    @date        2020-05-30
+    
+"""
+
 # On importe les modules nécessaires à la création du jeu 
 import pygame
 import random
@@ -1458,7 +1467,7 @@ def jukebox():  #fonction qui permet de changer de musique selon la zone
     global story, music, scenario
     if story == 0 and music == 0:   #Si l'utilisateur remplit les conditions requises :
         pygame.mixer.music.load(r"music/ecrantitre.mp3")   #On charge une musique
-        pygame.mixer.music.play(-1)                   #On joue la musique
+        pygame.mixer.music.play(-1)                         #On joue la musique
         music = 1   #On annule une des conditions requises pour que la musique ne se recommence pas en boucle
     elif story == 1 and music == 0:
         pygame.mixer.music.load(r"music/select.mp3")
@@ -1502,13 +1511,14 @@ def jukebox():  #fonction qui permet de changer de musique selon la zone
         music = 1
 ####################-  Initialisation du jeu  -#########################
 screen = pygame.display.set_mode(size)  #On donne sa taille à l'écran
-pygame.key.set_repeat(50)               #Permet un mouvement "fluide" quand on bouge
+pygame.key.set_repeat(100)               #Permet un mouvement "fluide" quand on bouge
 
 while running:
         jukebox()                   #On démarre les musiques
         ori()                       #On active l'orientation du personnage pour toute la durée du jeu
         clic()                      #On permet à l'utilisateur de cliquer sur l'interface  
         pv = ceil(pv)               #Permet d'arrondir la valeur des pv
+
         if story == 0: #Début du jeu
             
             screen.blit(bg1, bg1rect)    #Permet d'afficher l'image séléctionée
@@ -1518,15 +1528,13 @@ while running:
                 screen.blit(texte,(190,350)) #Affiche le texte
             else:
                 texte = police.render("-Cliquez pour continuer-", 0, couleur_texte)
-                screen.blit(texte,(200,350)) #Affiche le texte
-            pygame.display.flip()        #Met à jour l'interface
+                screen.blit(texte,(200,350)) #Affiche le texte        #Met à jour l'interface
 
 
-        if story == 1: #Écran de séléction des personnages 
+        elif story == 1: #Écran de séléction des personnages 
          
             screen.blit(ch, chrect)
             screen.blit(d1, [0,400])
-            pygame.display.flip()
           
             
   
@@ -1534,33 +1542,28 @@ while running:
     
             screen.blit(ch1, ch1rect)
             screen.blit(d2, d2rect)
-            pygame.display.flip()
          
                             
         elif story == 3:    #Archer
            
             screen.blit(ch2, ch2rect)
             screen.blit(d2, d2rect)
-            pygame.display.flip()
         
                             
         elif story == 4:    #Magicienne
            
             screen.blit(ch3, ch3rect)
             screen.blit(d2, d2rect)
-            pygame.display.flip()
            
             
         elif story == 5:    #Tous les choix renvoient finalement à ce personnage
             screen.blit(ch4, ch4rect)
-            pygame.display.flip()
            
                             
                         
         elif story == 6:    #Écran de sauvegarde
             screen.blit(bs, bsrect)
             screen.blit(logo, [150,100])
-            pygame.display.flip()
        
             
         elif story == 7:    #On affiche la forêt et les personnages
@@ -1570,7 +1573,6 @@ while running:
             screen.blit(light2, light2rect)
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
-            pygame.display.flip()
        
            
         elif story ==8:     #La fée parle
@@ -1579,7 +1581,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial1, dial1rect)
-            pygame.display.flip()
           
             
         elif story ==9:     #La fée parle   
@@ -1591,7 +1592,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial2, dial2rect)
-            pygame.display.flip()
             
         elif story == 10:     #On effectue un premier choix
             screen.blit(bg2, bg2rect)
@@ -1599,7 +1599,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(c1, c1rect)
-            pygame.display.flip()
             
         elif story == 11:     #Choix 1: La fée donne son nom : Fey
             screen.blit(bg2, bg2rect)
@@ -1607,7 +1606,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial6, dial6rect)
-            pygame.display.flip()
         
         elif story == 111:  #Choix 1 : Fey parle
             screen.blit(bg2, bg2rect)
@@ -1615,7 +1613,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial7, dial7rect)
-            pygame.display.flip()
         
         elif story == 12:   #Choix 2: la fée parle de la forêt
             screen.blit(bg2, bg2rect)
@@ -1623,7 +1620,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial3, dial3rect)
-            pygame.display.flip()
             
         elif story == 121:  #Choix 2: la fée parle
             screen.blit(bg2, bg2rect)
@@ -1631,7 +1627,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial4, dial4rect)
-            pygame.display.flip()
         
         elif story == 122:  #Choix 2: la fée donne son nom : Fey
             screen.blit(bg2, bg2rect)
@@ -1639,7 +1634,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial5, dial5rect)
-            pygame.display.flip()
         
         elif story == 13:   #Le personnage principal ne sait pas qui il est
             screen.blit(bg2, bg2rect)
@@ -1647,7 +1641,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial8, dial8rect)
-            pygame.display.flip()
         
         elif story == 14:   #Fey parle
             screen.blit(bg2, bg2rect)
@@ -1655,7 +1648,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial9, dial9rect)
-            pygame.display.flip()
             
         elif story == 15:   #Fey parle   
             screen.blit(bg2, bg2rect)
@@ -1663,7 +1655,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial10, dial10rect)
-            pygame.display.flip()
         
         elif story == 16:   #Fey parle
             screen.blit(bg2, bg2rect)
@@ -1671,7 +1662,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             screen.blit(dial11, dial11rect)
-            pygame.display.flip()
         
         elif story == 17:   #On se déplace dans la forêt
             screen.blit(bg2, bg2rect)
@@ -1680,7 +1670,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             screen.blit(light, lightrect)
             move()  #On active le déplacement
-            pygame.display.flip()
             if  (dx < 100 or dx > 600) or (dy > 300) or (((100 < dx < 200) or (450 < dx < 600)) and (dy < 80)): #Zones de bloquage
                 dx = dx2
                 dy = dy2
@@ -1701,13 +1690,12 @@ while running:
                 screen.blit(bg3, bg3rect)
                 screen.blit(mov[x], [dx,dy])
                 screen.blit(dial12, dial12rect)
-                pygame.display.flip()
+
                 
         elif story == 19:   #On se déplace dans la forêt
             screen.blit(bg3, bg3rect)
             screen.blit(mov[x], [dx,dy])
             move()
-            pygame.display.flip()
             if (0 < dx < 260 and 0 < dy < 150) or (0 < dx < 260 and 275 < dy < 550) or (415 < dx < 800 and 0 < dy < 150) or (420 < dx < 800 and 275 < dy < 550) or (dy > 450) or (dx < 5 or dx > 700):
                 dx = dx2
                 dy = dy2 
@@ -1727,153 +1715,131 @@ while running:
             restart = 1 #On ajoute 1 à restart pour sauvegarder 
             screen.blit(bs, bsrect)
             screen.blit(logo, [150, 100])
-            pygame.display.flip()
             
         elif story == 21:   #On affiche l'intérieur de la cabane
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])  #On affiche le vieillard
             screen.blit(mov[x], [dx,dy])
-            pygame.display.flip()
         
         elif story == 22:   #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial13, dial13rect)
-            pygame.display.flip()
             
         elif story == 23:   #Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
-            screen.blit(dial14, dial14rect)
-            pygame.display.flip() 
+            screen.blit(dial14, dial14rect) 
             
         elif story == 24:   #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
-            screen.blit(dial15, dial15rect)
-            pygame.display.flip() 
+            screen.blit(dial15, dial15rect) 
         
         elif story == 25:   #On fait notre deuxième choix
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(c2, c2rect)
-            pygame.display.flip()
         
         elif story == 26:   #Choix 1: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial16, dial16rect)
-            pygame.display.flip()
         
         elif story == 261:   #Choix 1: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial17, dial17rect)
-            pygame.display.flip()
         
         elif story == 27:   #Choix 2: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial18, dial18rect)
-            pygame.display.flip()
             
         elif story == 28:   #Requête du vieillard
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial19, dial19rect)
-            pygame.display.flip()
             
         elif story == 29:   #Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial20, dial20rect)
-            pygame.display.flip()
             
         elif story == 30:   #Le vieillard demande de l'aide
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial21, dial21rect)
-            pygame.display.flip()
          
         elif story == 31:   #On fait un troisième choix
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(c3, c3rect)
-            pygame.display.flip()
             
         elif story == 32:   #Choix 1: On accepte sa requête
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
-            screen.blit(dial23, dial23rect)
-            pygame.display.flip()    
+            screen.blit(dial23, dial23rect)    
         
         elif story == 33:   #Choix 2: On refuse mais il insiste
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial22, dial22rect)
-            pygame.display.flip()
         
         elif story == 34:   #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial24, dial24rect)
-            pygame.display.flip()
             
         elif story == 35:   #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial25, dial25rect)
-            pygame.display.flip()
         
         elif story == 36:   #Le vieillard nous donne le -Kit de base-
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial26, dial26rect)
-            pygame.display.flip()
         
         elif story == 37:      #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial27, dial27rect)
-            pygame.display.flip()
         
         elif story == 38:      #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial28, dial28rect)
-            pygame.display.flip()
             
         elif story == 39:      #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial29, dial29rect)
-            pygame.display.flip()
          
         elif story == 40:   #On peur sortir de la cabane
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             move()
-            pygame.display.flip()
             if (130 < dx < 550 and 0 < dy < 150) or (((120 < dx < 130) or (550 < dx < 570)) and dy < 150) or (dy > 450 or dy < 10) or (dx < 5 or dx > 700): #Zones de bloquage
                 dx = dx2
                 dy = dy2 
@@ -1888,7 +1854,6 @@ while running:
             screen.blit(bg3, bg3rect)
             screen.blit(mov[x], [dx,dy])
             move()
-            pygame.display.flip()
             if (0 < dx < 260 and 0 < dy < 150) or (0 < dx < 260 and 275 < dy < 550) or (420 < dx < 800 and 0 < dy < 150) or (420 < dx < 800 and 275 < dy < 550) or (dy > 450): #Zones de bloquage
                 dx = dx2
                 dy = dy2
@@ -1923,7 +1888,6 @@ while running:
             screen.blit(mov[x], [dx,dy])
             move()
             combat()
-            pygame.display.flip()
             if (dy < 50) or (dx < 65) or (dy > 325) or (700 < dx < 800 and 0 < dy < 140) or (660 < dx < 800 and 250 < dy < 550):
                 dx = dx2
                 dy = dy2
@@ -1950,7 +1914,7 @@ while running:
                  screen.blit(texte2,(553,50))
              texte3 = police.render("LVL "+str(lvl), 0, couleur_texte4)
              screen.blit(texte3,(135,50))
-             pygame.display.flip()
+
 
         elif story == 44:  #Que faire ?
              screen.blit(f2, f2rect)
@@ -1958,7 +1922,7 @@ while running:
              texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)   #On donne au texte la valeur des pv et des pv max
              screen.blit(texte,(35,345))    #On affiche le texte
              screen.blit(mon1[x1], [500,80])
-             pygame.display.flip()
+
              
         elif story == 45: #Attaque
             if fey ==1: #Si l'on a pas utilisé Fey:
@@ -1969,7 +1933,6 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
-            pygame.display.flip()
             
         elif story == 46:   #Kit
              if power == 1: #Si l'on a pas utisé la Puissance:
@@ -1980,7 +1943,7 @@ while running:
              texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
              screen.blit(texte,(35,345))
              screen.blit(mon1[x1], [500,80])
-             pygame.display.flip()
+
              
         elif story == 47:   #Santé restaure les PV
             screen.blit(f6, f6rect)  
@@ -1989,7 +1952,6 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
-            pygame.display.flip()
              
         elif story == 471:  #Puissance augmente l'attaque et la chance
             screen.blit(f7, f7rect) 
@@ -1998,7 +1960,6 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
-            pygame.display.flip()
             
         elif story == 48: #Force est utilisée
             if crit == 1:   #Si on met un coup critique:
@@ -2016,7 +1977,6 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
             screen.blit(at1, [500,80])
-            pygame.display.flip()
         
         elif story == 481:  #Magie est utilisée
             if crit == 1:
@@ -2034,11 +1994,9 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
             screen.blit(at2, [500,80])
-            pygame.display.flip()
         
         elif story == 482:  #Fey : Je m'en charge !
             screen.blit(f13, f13rect)
-            pygame.display.flip()
         
         elif story == 49: #Monstre reçoit d'énormes dégâts !
             screen.blit(f14, f14rect)
@@ -2047,7 +2005,6 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
             screen.blit(at3, [500,80])
-            pygame.display.flip()
         
         elif story == 50: #Le monstre attaque
             if crit == 1:
@@ -2059,7 +2016,6 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
-            pygame.display.flip()
             
         elif story == 501:  #Attaque manquée
             screen.blit(f17, f17rect)
@@ -2067,7 +2023,6 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
-            pygame.display.flip()
         
         elif story == 502: #Attaque du monstre manquée
             screen.blit(f18, f18rect)
@@ -2075,162 +2030,138 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(mon1[x1], [500,80])
-            pygame.display.flip()
          
         elif story == 51:   #Victoire ! Vous gagnez de l'EXP !
             screen.blit(f19, f19rect)
             screen.blit(zero, [100,110])
             texte = police.render("LVL "+str(lvl), 0, couleur_texte4)
             screen.blit(texte,(35,345))
-            pygame.display.flip()
             
         elif story == -2: #Vous n'avez plus de PV..
             screen.blit(f20, f20rect)
             screen.blit(zero, [100,110])
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
-            screen.blit(mon1[x1], [500,80])
-            pygame.display.flip() 
+            screen.blit(mon1[x1], [500,80]) 
             
         elif story == -1:   #Game over
             screen.blit(go, gorect)
             texte = police.render("-Cliquez pour recommencer-", 0, couleur_texte5)
             screen.blit(texte,(164,320))
-            pygame.display.flip()
         
         elif story == 401:  #Le vieillard nous donne des conseils
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial30, dial30rect)
-            pygame.display.flip()
         
         elif story == 402:  #Le vieillard nous donne des conseils
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial31, dial31rect)
-            pygame.display.flip()
         
         elif story == 403:  #Le vieillard nous donne des conseils
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial32, dial32rect)
-            pygame.display.flip()
         
         elif story == 404:  #Le vieillard nous donne des conseils
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial33, dial33rect)
-            pygame.display.flip()
             
         elif story == 405:  #Le vieillard nous donne des conseils
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial34, dial34rect)
-            pygame.display.flip()
         
         elif story == 52:   #Écran de sauvegarde
             restart = 2     #On ajoute 1 à restart pour sauvegarder à nouveau
             screen.blit(bs, bsrect)
             screen.blit(logo, [150, 100])
-            pygame.display.flip()
    
         elif story == 53:   #Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial35, dial35rect)
-            pygame.display.flip()
             
         elif story == 54:   #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial36, dial36rect)
-            pygame.display.flip()
             
         elif story == 55:   #Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial37, dial37rect)
-            pygame.display.flip()
             
         elif story == 56:   #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial38, dial38rect)
-            pygame.display.flip()
             
         elif story == 57:   #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial39, dial39rect)
-            pygame.display.flip()
         
         elif story == 58:   #On fait un choix
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(c4, c4rect)
-            pygame.display.flip()
             
         elif story == 581:  #Choix 1: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial41, dial41rect)
-            pygame.display.flip()
             
         elif story == 582:  #Choix 2: Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial40, dial40rect)
-            pygame.display.flip()
             
         elif story == 59:   #Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial42, dial42rect)
-            pygame.display.flip()
             
         elif story == 60:   #Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial43, dial43rect)
-            pygame.display.flip()
        
         elif story == 61:   #On fait un choix pour entrer dans la salle du boss
             screen.blit(bg3, bg3rect)
             screen.blit(mov[x], [dx,dy])
             screen.blit(c5, c5rect)
-            pygame.display.flip()
 
         elif story == 62:   #Zone du boss
             screen.blit(bg6, bg6rect)   #On affiche le boss et sa zone
             screen.blit(mov[x], [dx,dy])
-            pygame.display.flip()
         
         elif story == 63:   #Avilis parle
             screen.blit(bg6, bg6rect)
             screen.blit(dial44, dial44rect)
             screen.blit(mov[x], [dx,dy])
-            pygame.display.flip()
             
         elif story == 64:   #Avilis parle
             screen.blit(bg6, bg6rect)
             screen.blit(dial45, dial45rect)
             screen.blit(mov[x], [dx,dy])
-            pygame.display.flip()
             
         elif story == 65:   #Avilis vous défie !
             screen.blit(f21, f21rect)
@@ -2242,14 +2173,12 @@ while running:
             screen.blit(texte2,(653,50))
             texte3 = police.render("LVL "+str(lvl), 0, couleur_texte4)
             screen.blit(texte3,(135,50))
-            pygame.display.flip()
             
         elif story == 66:   #Que faire ?
             screen.blit(f22, f22rect)
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            pygame.display.flip()
 
         elif story == 67: #Attaque
             if fey ==1:
@@ -2259,7 +2188,6 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            pygame.display.flip()
 
         elif story == 68:   #Kit
             if power ==1:
@@ -2269,7 +2197,6 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            pygame.display.flip()
             
         elif story == 69:   #Santé restaure les PV
             screen.blit(f26, f26rect)
@@ -2277,7 +2204,6 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
             screen.blit(at6, [100,110])
-            pygame.display.flip()
             
         elif story == 691:  #Puissance augment l'attaque et le chance !
             screen.blit(f27, f27rect)
@@ -2285,7 +2211,6 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
             screen.blit(at5, [100,110])
-            pygame.display.flip()
 
         elif story == 70:   #Force est utilisée
             if crit == 1:
@@ -2296,7 +2221,6 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
             screen.blit(at1, [500,80])
-            pygame.display.flip()
             
         elif story == 701:  #Magie est utilisée
             if crit == 1:
@@ -2307,11 +2231,9 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
             screen.blit(at2, [500,80])
-            pygame.display.flip()
         
         elif story == 702:  #Fey : Je m'en charge !
             screen.blit(f33, f33rect)
-            pygame.display.flip()
          
         elif story == 71:   #Avilis reçoit d'énormes dégâts ! Hausse d'attaque !
             screen.blit(f34, f34rect)
@@ -2319,7 +2241,6 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
             screen.blit(at3, [500,80])
-            pygame.display.flip()
             
         elif story == 72:   #Avilis attaque
             if crit == 1:
@@ -2329,26 +2250,22 @@ while running:
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            screen.blit(at4, [100,110])
-            pygame.display.flip()   
+            screen.blit(at4, [100,110])   
             
         elif story == 721:  #Attaque manquée
             screen.blit(f37, f37rect)
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            pygame.display.flip()
             
         elif story == 722:  #Attaque d'Avilis manquée
             screen.blit(f38, f38rect)
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            pygame.display.flip()
             
         elif story == 73:   #Avilis: Hors de ma vue !
             screen.blit(f41, f41rect)
-            pygame.display.flip()
             
         elif story == 731: #Avilis fait d'énormes dégêts ! Baisse de défense ! 
             screen.blit(f42, f42rect)
@@ -2356,30 +2273,26 @@ while running:
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
             screen.blit(at7, [100,110])
-            pygame.display.flip()
-        
    
         
+
         elif story == 75:   #Victoire ! Vous avez vaincu Avilis !
             screen.blit(f39, f39rect)
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            pygame.display.flip()
             
         elif story == -3:   #Vous n'avez plus de PV..
             screen.blit(f40, f40rect)
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            pygame.display.flip()
             
         elif story == 76:   #Avilis s'énerve ! Toutes ses stats augmentent !
             screen.blit(f43, f43rect)
             texte = police.render(str(pv)+"/"+str(pvi)+" PV", 0, couleur_texte4)
             screen.blit(texte,(35,345))
             screen.blit(zero, [100,110])
-            pygame.display.flip()
         
         elif story == 78:   #Le vieillard parle 
             dx = 330
@@ -2389,150 +2302,122 @@ while running:
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial46, dial46rect)
-            pygame.display.flip()
          
         elif story == 79:   #Le vieillard parle 
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
-            screen.blit(dial47, dial47rect)
-            pygame.display.flip() 
+            screen.blit(dial47, dial47rect) 
             
         elif story == 80:   #Fey parle 
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial48, dial48rect)
-            pygame.display.flip()
             
         elif story == 81:   #Dernier choix
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(c6, c6rect)
-            pygame.display.flip()
         
         elif story == 811:  #Choix 1: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
-            screen.blit(dial49, dial49rect)
-            pygame.display.flip()    
+            screen.blit(dial49, dial49rect)    
         
         elif story == 812:  #Choix 1: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial50, dial50rect)
-            pygame.display.flip()
             
         elif story == 813:  #Choix 1: Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial51, dial51rect)
-            pygame.display.flip()
             
         elif story == 814: #Choix 1: Le personnage parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial52, dial52rect)
-            pygame.display.flip()
         
         elif story == 815:  #Choix 1: Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial53, dial53rect)
-            pygame.display.flip()
             
         elif story == 816:  #Choix 1: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial54, dial54rect)
-            pygame.display.flip()
             
         elif story == 817:  #Choix 1: Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial55, dial55rect)
-            pygame.display.flip()
             
         elif story == 82:   #Choix 2: Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial57, dial57rect)
-            pygame.display.flip()
             
         elif story == 83:   #Choix 2: Le personnage parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial52, dial52rect)
-            pygame.display.flip()
         
         elif story == 84:   #Choix 2: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial58, dial58rect)
-            pygame.display.flip()
         
         elif story == 85:   #Choix 2: Le vieillard parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial59, dial59rect)
-            pygame.display.flip()
             
         elif story == 86:   #Choix 2: Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial60, dial60rect)
-            pygame.display.flip()
             
         elif story == 87:   #Choix 2: Fey parle
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial61, dial61rect)
-            pygame.display.flip()
             
         elif story == 88 or story == 818:   #Partons à l'aventure !
             screen.blit(bg4, bg4rect)
             screen.blit(oya, [350,20])
             screen.blit(mov[x], [dx,dy])
             screen.blit(dial56, dial56rect)
-            pygame.display.flip()
             
         elif story == 89:   #Fin du jeu
             screen.blit(bg7, bg7rect)
-            pygame.display.flip()
             
         elif story == 90:   #Crédits
             screen.blit(bg8, bg8rect)
-            pygame.display.flip()
       
                
 #Pour les changements de musique
         elif story == 411 or story == 412 or story == 771: 
             screen.blit(bs, bsrect)
             screen.blit(logo, [150, 100])
-            pygame.display.flip()
  
-        
+        pygame.display.set_caption("Choice - FPS: {:.2f}".format(clock.get_fps()))
         pygame.display.flip()   #Met à jour le tout
         clock.tick(fps)
 
-        #Debug
-        #print(clock.get_fps())
-        #print(cm)
-        #print("Crit : "+str(crit))
-        #print("Héros lvl "+str(lvl)+" :"+str(s1)+" PV : "+str(pv))
-        #print("Monstre lvl "+str(lvlm)+" :"+str(s2)+" PV : "+str(pvm)+"\n")
-        #print(str(xp)+"/"+str(ceil(lvl**2.5)))
